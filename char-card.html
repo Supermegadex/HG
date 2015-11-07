@@ -1,0 +1,87 @@
+<link href="bower_components/polymer/polymer.html" rel="import">
+<dom-module id="char-card">
+  <template>
+    <style>
+      :host {
+        --paper-card-header-color: #fff;
+        --paper-card-header: #673AB7;
+      }
+
+      paper-card {
+        width: 50vw;
+      }
+
+      paper-slider {
+        width: 100%;
+        margin: auto;
+      }
+
+      .card-content {
+        padding-right: 5px;
+      }
+    </style>
+    <paper-card heading="Add new person" image="http://dummyimage.com/600x150/683ab7/683ab7.png" elevation="3">
+      <div class="card-content" style="width:95%">
+        <paper-input id="name" label="Name" floatingLabel></paper-input>
+        <br>
+        <br> Strength:
+        <br>
+        <paper-slider expand pin min="1" max="20" id="strSlider"></paper-slider>
+        <br>
+        <br> Agility:
+        <br>
+        <paper-slider expand pin min="1" max="20" id="agiSlider"></paper-slider>
+        <br>
+        <br> Charisma:
+        <br>
+        <paper-slider expand pin min="1" max="20" id="chaSlider"></paper-slider>
+        <br>
+        <br> Willpower:
+        <br>
+        <paper-slider expand pin min="1" max="20" id="wilSlider"></paper-slider>
+        <br>
+        <br> Intelligence:
+        <br>
+        <paper-slider expand pin min="1" max="20" id="intSlider"></paper-slider>
+        <br>
+        <br> Alignment:
+        <br>
+        <paper-dropdown-menu label="Your alignment" id="alignment" on-iron-select="_itemSelected">
+          <paper-menu class="dropdown-content">
+            <paper-item>Lawful Good</paper-item>
+            <paper-item>Neutral Good</paper-item>
+            <paper-item>Chaotic Good</paper-item>
+            <paper-item>Lawful Neutral</paper-item>
+            <paper-item>True Neutral</paper-item>
+            <paper-item>Chaotic Neutral</paper-item>
+            <paper-item>Lawful Evil</paper-item>
+            <paper-item>Neutral Evil</paper-item>
+            <paper-item>Chaotic Evil</paper-item>
+          </paper-menu>
+        </paper-dropdown-menu>
+      </div>
+      <div class="card-actions">
+        <paper-button icon="icons:arrow-forward" onclick="nextChar()">Next
+          <paper-icon icon="icons:arrow-forward"></paper-icon>
+        </paper-button>
+        <paper-button raised style="color: blue; background: orange;">Done</paper-button>
+      </div>
+    </paper-card>
+  </template>
+  <script>
+    Polymer({
+      is: "char-card",
+      properties: {
+        a: String,
+      },
+      _itemSelected: function(e) {
+        console.log(e);
+        console.log(e.target.selectedItem);
+        var selectedItem = e.target.selectedItem.innerText;
+        if (selectedItem) {
+          temp.alignment = selectedItem;
+        }
+      },
+    })
+  </script>
+</dom-module>

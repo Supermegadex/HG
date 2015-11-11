@@ -12,7 +12,7 @@
       }
 
       paper-slider {
-        width: 100%;
+        width: 98%;
         margin: auto;
       }
 
@@ -22,31 +22,31 @@
     </style>
     <paper-card heading="Add new person" image="http://dummyimage.com/600x150/683ab7/683ab7.png" elevation="3">
       <div class="card-content" style="width:95%">
-        <paper-input id="name" label="Name" floatingLabel></paper-input>
+        <paper-input id="name" label="Name" required floatingLabel></paper-input>
         <br>
         <br> Strength:
         <br>
-        <paper-slider expand pin min="1" max="20" id="strSlider"></paper-slider>
+        <paper-slider expand pin min="1" required editable max="20" id="strSlider"></paper-slider>
         <br>
         <br> Agility:
         <br>
-        <paper-slider expand pin min="1" max="20" id="agiSlider"></paper-slider>
+        <paper-slider expand pin min="1" max="20" editable required id="agiSlider"></paper-slider>
         <br>
         <br> Charisma:
         <br>
-        <paper-slider expand pin min="1" max="20" id="chaSlider"></paper-slider>
+        <paper-slider expand pin min="1" max="20" editable required id="chaSlider"></paper-slider>
         <br>
         <br> Willpower:
         <br>
-        <paper-slider expand pin min="1" max="20" id="wilSlider"></paper-slider>
+        <paper-slider expand pin min="1" max="20" editable required id="wilSlider"></paper-slider>
         <br>
         <br> Intelligence:
         <br>
-        <paper-slider expand pin min="1" max="20" id="intSlider"></paper-slider>
+        <paper-slider expand pin min="1" max="20" editable required id="intSlider"></paper-slider>
         <br>
         <br> Alignment:
         <br>
-        <paper-dropdown-menu label="Your alignment" id="alignment" on-iron-select="_itemSelected">
+        <paper-dropdown-menu label="Your alignment" editable required id="alignment" on-iron-select="_itemSelected">
           <paper-menu class="dropdown-content">
             <paper-item>Lawful Good</paper-item>
             <paper-item>Neutral Good</paper-item>
@@ -64,7 +64,7 @@
         <paper-button icon="icons:arrow-forward" onclick="nextChar()">Next
           <paper-icon icon="icons:arrow-forward"></paper-icon>
         </paper-button>
-        <paper-button raised style="color: blue; background: orange;">Done</paper-button>
+        <paper-button raised style="background: orange;" onclick="done()">Done</paper-button>
       </div>
     </paper-card>
   </template>
@@ -82,6 +82,6 @@
           temp.alignment = selectedItem;
         }
       },
-    })
+    });
   </script>
 </dom-module>

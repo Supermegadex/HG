@@ -6,13 +6,27 @@
       :host {
         --paper-tabs-selection-bar-color: #651FFF;
         --paper-tab-ink: #B388FF;
+        width: 100%;
       }
-
+      
       paper-tabs {
-        background: #009688
+        background: #009688;
+        left: 0;
       }
-
-      #create {
+      
+      iron-pages {
+        width: 100%;
+        left: 0;
+      }
+      
+      #cont1,
+      #cont2,
+      #cont3 {
+        padding: 5px;
+      }
+      
+      #create,
+      #cont1 {
         @apply(--layout-horizontal);
         @apply(--layout-center);
         @apply(--layout-center-justified);
@@ -24,19 +38,21 @@
     </style>
     <paper-tabs selected="{{selected}}">
       <paper-tab id="label1">Welcome!</paper-tab>
-      <paper-tab id="label2"></paper-tab>
-      <paper-tab id="label3"></paper-tab>
+      <paper-tab id="label2">Add people</paper-tab>
+      <paper-tab id="label3">Play</paper-tab>
     </paper-tabs>
 
     <iron-pages selected="{{selected}}">
-      <div id="cont1">This is an HG sim. Have fun!</div>
+      <div id="cont1">This is an HG sim. Have fun!
+        <br> Start by adding people!</div>
       <div id="cont2">
         <div id="create">
           <char-card></char-card>
         </div>
       </div>
-      <div id="cont3">Page 3</div>
+      <div id="cont3">How about <a href="javascript:switchTab(1)">adding some people</a> first.</div>
     </iron-pages>
+    <paper-toast text="Person Added!" id="addToast"></paper-toast>
   </template>
   <script>
     Polymer({

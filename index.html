@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html touch-action="pan-x">
 
   <head>
     <title>HG</title>
@@ -47,21 +47,24 @@
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-menu/paper-menu.html">
     <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+    <link rel="import" href="bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="bower_components/paper-slider/paper-slider.html">
     <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
     <link rel="import" href="bower_components/font-roboto/roboto.html">
     <link rel="import" href="char-card.html">
+    <link rel="import" href="play-card.html">
     <link rel="import" href="app.html">
 
     <link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc2/angular-material.css'>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </head>
 
-  <body>
-    <app-cont selected="0"></app-cont>
+  <body id="bdy">
+    <app-cont selected="0" id="app"></app-cont>
   </body>
 
   <script src="js/index.js"></script>
-
 </html>

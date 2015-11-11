@@ -1,0 +1,48 @@
+<link href="bower_components/polymer/polymer.html" rel="import">
+<dom-module id="play-card">
+  <template>
+    <style>
+      :host {
+        --paper-card-header-color: #fff;
+        --paper-card-header: #673AB7;
+      }
+
+      paper-card {
+        width: 50vw;
+      }
+
+      paper-slider {
+        width: 98%;
+        margin: auto;
+      }
+
+      .card-content {
+        padding-right: 5px;
+      }
+    </style>
+    <paper-card heading="Day {{day}}, {{time}}" image="http://dummyimage.com/600x150/683ab7/683ab7.png" elevation="3">
+      <div class="card-content" id="story" style="width:95%">
+      </div>
+      <div class="card-actions">
+        <paper-button style="background: orange; width:100%" onclick="done()">Next</paper-button>
+      </div>
+    </paper-card>
+  </template>
+  <script>
+    Polymer({
+      is: "play-card",
+      properties: {
+        day: Number,
+        time: String
+      },
+      _itemSelected: function(e) {
+        console.log(e);
+        console.log(e.target.selectedItem);
+        var selectedItem = e.target.selectedItem.innerText;
+        if (selectedItem) {
+          temp.alignment = selectedItem;
+        }
+      },
+    });
+  </script>
+</dom-module>

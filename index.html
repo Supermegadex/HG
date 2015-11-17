@@ -50,11 +50,16 @@
     <link rel="import" href="bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="bower_components/paper-slider/paper-slider.html">
     <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
     <link rel="import" href="bower_components/font-roboto/roboto.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/neon-animated-pages/neon-animated-pages.html">
     <link rel="import" href="char-card.html">
     <link rel="import" href="play-card.html">
     <link rel="import" href="app.html">
+
 
     <link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc2/angular-material.css'>
 
@@ -62,9 +67,10 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </head>
 
-  <body id="bdy">
-    <app-cont selected="0" id="app"></app-cont>
+  <body id="bdy" class="fullbleed layout vertical" unresolved>
+    <app-cont selected="0" id="app" style="height: 100%; width:100%"></app-cont>
   </body>
 
   <script src="js/index.js"></script>
+
 </html>

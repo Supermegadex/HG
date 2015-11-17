@@ -8,23 +8,25 @@
         --paper-tab-ink: #B388FF;
         width: 100%;
       }
-      
+
       paper-tabs {
         background: #009688;
         left: 0;
+        width: 100%;
+        position: relative;
       }
-      
+
       iron-pages {
         width: 100%;
         left: 0;
       }
-      
+
       #cont1,
       #cont2,
       #cont3 {
         padding: 5px;
       }
-      
+
       #create,
       #cont1 {
         @apply(--layout-horizontal);
@@ -35,23 +37,34 @@
         padding: 10px;
         margin: 5px;
       }
-    </style>
-    <paper-tabs selected="{{selected}}">
-      <paper-tab id="label1">Welcome!</paper-tab>
-      <paper-tab id="label2">Add people</paper-tab>
-      <paper-tab id="label3">Play</paper-tab>
-    </paper-tabs>
 
-    <iron-pages selected="{{selected}}">
-      <div id="cont1">This is an HG sim. Have fun!
-        <br> Start by adding people!</div>
-      <div id="cont2">
-        <div id="create">
-          <char-card></char-card>
+      h1 {
+        font-family: "Product Sans", sans-serif;
+      }
+    </style>
+    <paper-scroll-header-panel style="height: 100%; width: 100%" class="flex" condenses condensed-header-height="65">
+      <paper-toolbar style="background:#009688" class="medium-tall">
+        <div class="top title">
+          <h1>HGSim</h1>
         </div>
-      </div>
-      <div id="cont3">How about <a href="javascript:switchTab(1)">adding some people</a> first.</div>
-    </iron-pages>
+        <paper-tabs selected="{{selected}}" style="height: 100%; width: 100%" class="bottom title">
+          <paper-tab id="label1">Welcome!</paper-tab>
+          <paper-tab id="label2">Add people</paper-tab>
+          <paper-tab id="label3">Play</paper-tab>
+        </paper-tabs>
+      </paper-toolbar>
+
+      <iron-pages selected="{{selected}}">
+          <div id="cont1">This is an HG sim. Simply input some people that you want to pit against each other to the death, then sit back and watch! (and click the continue button);
+          </div>
+          <div id="cont2">
+            <div id="create">
+              <char-card></char-card>
+            </div>
+          </div>
+          <div id="cont3">How about <a href="javascript:switchTab(1)">adding some people</a> first.</div>
+      </iron-pages>
+    </paper-scroll-header-panel>
     <paper-toast text="Person Added!" id="addToast"></paper-toast>
   </template>
   <script>

@@ -11,6 +11,12 @@
         width: 50vw;
       }
 
+      .sliderWrap {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        @apply(--layout-center-justified);
+      }
+
       paper-slider {
         width: 98%;
         margin: auto;
@@ -22,43 +28,46 @@
     </style>
     <paper-card heading="Add new person" image="http://dummyimage.com/600x150/683ab7/683ab7.png" elevation="3">
       <div class="card-content" style="width:95%">
-        <paper-input id="name" label="Name" required floatingLabel></paper-input>
-        <br>
-        <br> Strength:
-        <br>
-        <paper-slider expand pin min="1" required editable max="20" id="strSlider"></paper-slider>
-        <br>
-        <br> Agility:
-        <br>
-        <paper-slider expand pin min="1" max="20" editable required id="agiSlider"></paper-slider>
-        <br>
-        <br> Charisma:
-        <br>
-        <paper-slider expand pin min="1" max="20" editable required id="chaSlider"></paper-slider>
-        <br>
-        <br> Willpower:
-        <br>
-        <paper-slider expand pin min="1" max="20" editable required id="wilSlider"></paper-slider>
-        <br>
-        <br> Intelligence:
-        <br>
-        <paper-slider expand pin min="1" max="20" editable required id="intSlider"></paper-slider>
-        <br>
-        <br> Alignment:
-        <br>
-        <paper-dropdown-menu label="Your alignment" editable required id="alignment" on-iron-select="_itemSelected">
-          <paper-menu class="dropdown-content">
-            <paper-item>Lawful Good</paper-item>
-            <paper-item>Neutral Good</paper-item>
-            <paper-item>Chaotic Good</paper-item>
-            <paper-item>Lawful Neutral</paper-item>
-            <paper-item>True Neutral</paper-item>
-            <paper-item>Chaotic Neutral</paper-item>
-            <paper-item>Lawful Evil</paper-item>
-            <paper-item>Neutral Evil</paper-item>
-            <paper-item>Chaotic Evil</paper-item>
-          </paper-menu>
-        </paper-dropdown-menu>
+        <form action="javascript:nextChar()">
+          <paper-input id="name" label="Name" required floatingLabel autofocus></paper-input>
+          <br>
+          <!-- Emmet for the future: (div.sliderWrap{Test}>paper-slider[expand required pin editable max="20" id min="1"])*8 -->
+          <br> Strength:
+          <br>
+          <paper-slider expand pin min="1" required editable max="20" id="strSlider"></paper-slider>
+          <br>
+          <br> Agility:
+          <br>
+          <paper-slider expand pin min="1" max="20" editable required id="agiSlider"></paper-slider>
+          <br>
+          <br> Charisma:
+          <br>
+          <paper-slider expand pin min="1" max="20" editable required id="chaSlider"></paper-slider>
+          <br>
+          <br> Willpower:
+          <br>
+          <paper-slider expand pin min="1" max="20" editable required id="wilSlider"></paper-slider>
+          <br>
+          <br> Intelligence:
+          <br>
+          <paper-slider expand pin min="1" max="20" editable required id="intSlider"></paper-slider>
+          <br>
+          <br> Alignment:
+          <br>
+          <paper-dropdown-menu label="Your alignment" editable required id="alignment" on-iron-select="_itemSelected">
+            <paper-menu class="dropdown-content">
+              <paper-item>Lawful Good</paper-item>
+              <paper-item>Neutral Good</paper-item>
+              <paper-item>Chaotic Good</paper-item>
+              <paper-item>Lawful Neutral</paper-item>
+              <paper-item>True Neutral</paper-item>
+              <paper-item>Chaotic Neutral</paper-item>
+              <paper-item>Lawful Evil</paper-item>
+              <paper-item>Neutral Evil</paper-item>
+              <paper-item>Chaotic Evil</paper-item>
+            </paper-menu>
+          </paper-dropdown-menu>
+        </form>
       </div>
       <div class="card-actions">
         <paper-button icon="icons:arrow-forward" onclick="nextChar()">Next

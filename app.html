@@ -54,16 +54,16 @@
         </paper-tabs>
       </paper-toolbar>
 
-      <iron-pages selected="{{selected}}">
-          <div id="cont1">This is an HG sim. Simply input some people that you want to pit against each other to the death, then sit back and watch! (and click the continue button);
-          </div>
-          <div id="cont2">
+      <neon-animated-pages class="flex" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation" selected="{{selected}}">
+          <neon-animatable id="cont1">This is an HG sim. Simply input some people that you want to pit against each other to the death, then sit back and watch! (and click the continue button);
+          </neon-animatable>
+          <neon-animatable id="cont2">
             <div id="create">
               <char-card></char-card>
             </div>
-          </div>
-          <div id="cont3">How about <a href="javascript:switchTab(1)">adding some people</a> first.</div>
-      </iron-pages>
+          </neon-animatable>
+          <neon-animatable id="cont3">How about <a href="javascript:switchTab(1)">adding some people</a> first.</neon-animatable>
+      </neon-animated-pages>
     </paper-scroll-header-panel>
     <paper-toast text="Person Added!" id="addToast"></paper-toast>
   </template>

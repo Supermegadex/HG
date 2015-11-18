@@ -32,4 +32,7 @@ function done() {
 function start() {
   document.querySelector( "#cont1" ).innerHTML = "<play-card id='playCard' day='1' time='bloodbath'></play-card>";
   switchTab( 0 );
+  document.querySelector("#tab1").innerText = "Story";
+  document.querySelector("#tab2").innerText = "Stats";
+  document.querySelector("#tab1").innerText = "Deaths";
 }

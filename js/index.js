@@ -20,10 +20,11 @@ function switchTab( i ) {
 
 function done() {
   nextChar();
-  var pn;
+  var pn = "<paper-list>";
   for ( var i in people ) {
-    
+    pn += "<paper-item>" + people[i].name + "</paper-item>";
   }
+  pn += "</paper-list>";
   document.querySelector( "#cont3" ).innerHTML = "<paper-button onclick='start()'>Begin</paper-button>" + pn;
   switchTab( 2 );
   document.querySelector( "#create" ).innerHTML = "";
